@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #wrap {
+        width: 100vw;
+        position: relative;
+        border: 3px solid green;
+        height: 100vh;
+    }
+
+    div div {
+        padding: 30px;
+        border: solid 2px black;
+        text-align: center;
+        width: 1000px;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @media screen and (max-width: 1100px) {
+        div div {
+            text-align: justify;
+            width: 80%;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        div div {
+            font-size: large;
+            width: 90%;
+            text-align: left;
+        }
+    }
+</style>
+
+<body>
+    <div id="wrap">
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, optio? Rem eligendi nulla saepe odit quia ea,
+            incidunt aliquid! Doloribus, ad dignissimos quos nulla sint nisi a placeat dicta consectetur. Lorem ipsum
+            dolor, sit amet consectetur adipisicing elit. Ipsam commodi cumque sit, nostrum molestias, tempore nemo
+            facilis rerum, quisquam voluptatem culpa? Cupiditate neque aperiam fugiat beatae impedit atque veniam sequi
+            accusantium hic tempora quia libero voluptatum quo eos sint fugit, ab exercitationem unde enim quis facere
+            voluptates. Officia, aperiam sapiente. Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
+            pariatur in esse.
+        </div>
+    </div>
+</body>
+
+</html>
