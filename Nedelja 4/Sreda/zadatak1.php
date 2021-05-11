@@ -26,6 +26,6 @@
     $novizbir=$a+$b+$c;
    ?>
 <div>Zbir brojeva <?=$a?>,<?=$b?> i <?=$c?> iznosi <?=$novizbir?></div>
-<!-- ovo iznad prikazuje vrendost promenljive -->
+
 </body>
 </html>
