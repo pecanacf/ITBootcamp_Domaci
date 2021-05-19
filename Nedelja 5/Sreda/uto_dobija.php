@@ -29,6 +29,9 @@
             }
         }
     }
+    else{
+        die;
+    }
     if($zbir1>$zbir2){
         echo "<p>Veci je prvi zbir i on iznosi $zbir1</p>";
     }
