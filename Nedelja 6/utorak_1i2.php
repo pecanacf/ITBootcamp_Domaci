@@ -32,31 +32,21 @@ echo biggest_number(15,90,12);
 
 <?php
 function create_spans($n){
-    
-echo "<div>";
+$div="";    
+$div.="<div>";
 for($i=1;$i<=$n;$i++){
-    echo "<span>$i</span><br>";
+    $div.="<span>$i</span><br>";
 }
-echo "</div>";
+$div.="</div>";
+return $div;
 }
 
-create_spans(12);
+
+echo create_spans(12);
 ?>
 <!-- . Бонус задатак Написати функцију која враћа N div елемената који имају M span елемената,
 који имају текст од 1 до M -->
 
-<?php
-function create_divs($n,$m){
-    for($i=1;$i<=$n;$i++){
-    echo "<div>";
-        for($j=1;$j<=$m;$j++){
-        echo "<span>$j</span>";
-        }
-    echo "</div>";
-    }
-}
-create_divs(5,2);
 
-?>
 </body>
 </html>
