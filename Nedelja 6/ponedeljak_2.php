@@ -32,7 +32,7 @@ Npr ako je broj 11, onda je celija u drugom redu i 3.koloni obojena crno. -->
 
 <?php
 $num=mt_rand(1,64);
-echo $num;
+//echo $num;
 echo "<table>";
 $zbir=0;
 for($i=1;$i<=8;$i++){
