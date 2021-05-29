@@ -9,16 +9,18 @@
 <body>
 <?php
 function create_divs($n,$m){
+    $div="";
     for($i=1;$i<=$n;$i++){
-    echo "<div>";
+    $div.= "<div>";
         for($j=1;$j<=$m;$j++){
-        echo "<span>$j</span><br>";
+        $div.= "<span>$j</span><br>";
         }
-    echo "</div>";
+    $div.="</div>";
     }
+    return $div;
 }
-create_divs(8,4);
-
+$div_creator=create_divs(8,4);
+echo $div_creator;
 ?>
 </body>
 </html>

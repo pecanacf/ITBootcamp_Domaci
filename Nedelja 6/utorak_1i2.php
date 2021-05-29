@@ -11,20 +11,11 @@
 
 <?php
 function biggest_number($a,$b,$c){
-    if($a>$b&&$a>$c){
-        return $a;
+    if($a>=$b&&$a>=$c) return $a;
+    elseif($b>=$a&&$b>=$c) return $b;
+    else return $c;
     }
-    elseif($b>$a&&$b>$c){
-        return $b;
-    }
-    elseif($c>$a&&$c>$b){
-        return $c;
-    }
-    else{
-        return "ne postoji 1 najveci broj";
-    }
-}
-echo biggest_number(15,90,12);
+echo biggest_number(15,60,90);
 
 ?>
  <!-- Написати функцију која враћа div унутар којег се налази N span елемената који за текст имају
