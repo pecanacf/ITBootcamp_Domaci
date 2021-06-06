@@ -23,9 +23,6 @@ foreach($niz as $rec){
     if(strlen($rec)<5) echo "<span class='crveni'>$rec</span><br>";
     if(strlen($rec)>5) echo "<span class='zeleni'>$rec</span><br>";
 }
-
-
-
 ?>
 </body>
 </html>

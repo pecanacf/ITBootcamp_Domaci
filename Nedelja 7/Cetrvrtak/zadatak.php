@@ -40,12 +40,11 @@ function show_all_data($x,$a){
             echo "<p>Podaci osobe su ".join(", ", $x[$i])."</p>";
         }
     }
-    for($i=0;$i<count($x);$i++){
-        if(stripos($x[$i]['ime'],$a)===false) continue;
-        else echo "<p>".$x[$i]['ime']."</p>";
-    }
 }
-show_all_data($x,"Sinisa");
+for($i=0;$i<count($x);$i++){
+    if(stripos($x[$i]['ime'],"s")===false) continue;
+    show_all_data($x,$x[$i]['ime']);
+    }
 ?>
 </body>
 </html>
