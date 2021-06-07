@@ -31,20 +31,36 @@ echo "<br>";
 
 
 
-$maks_niz = array_filter($x, function($osoba){
-    $maksimalna_vrednost=0;
-    foreach($x as $osoba){
-        if($osoba['godine_staza']>$maksimalna_vrednost){
-            $maksimalna_vrednost=$osoba['godine_staza'];
-        }
-    }
-        if($osoba['godine_staza'] == $maksimalna_vrednost)
-            return true;
-        else 
-            return false;
+// $maks_niz = array_filter($x, function($osoba){
+//     $maksimalna_vrednost=0;
+//         if($osoba['godine_staza']>$maksimalna_vrednost){
+//             $maksimalna_vrednost=$osoba['godine_staza'];
+//         }
 
-});
-print_r($maks_niz);
+//         if($osoba['godine_staza'] === $maksimalna_vrednost)
+//             return true;
+//         else 
+//             return false;
+
+// });
+
+// echo "Maks niz je";
+// print_r($maks_niz);
+$b = array();
+for($i=0; $i < count($x); $i++){
+   $b[$i] = $x[$i]['godine_staza'];
+}
+$najveci =  max($b);
+$max_radni_staz = array_filter($x, function($osoba){
+    global $najveci;
+    if($osoba['godine_staza'] == $najveci){
+       return true;
+    }else {
+        return false;
+    }
+ });
+ print_r($max_radni_staz);
+
 ?>
  
 
