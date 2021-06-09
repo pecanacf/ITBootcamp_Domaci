@@ -16,7 +16,7 @@ class Krevet{
     public $duzina;
     public $sirina;
     public $materijal;
-    private $cena;
+    protected $cena;
 
     public function __construct($duzina,$sirina,$materijal,$cena){
         $this->duzina=$duzina;
