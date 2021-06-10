@@ -25,11 +25,17 @@ Napraviti konstruktor koji poziva roditeljski konstruktor i upisuje podatke i u 
         $this->cena_Baldahina=$cena_Baldahina;
         parent::__construct($duzina,$sirina,$materijal,$cena);
    }
+   public function get_price(){
+    return parent::get_price();
+}
    public function __toString(){
-        $cena_sa_baldahinom=$this->cena+$this->cena_Baldahina;
-        $string="<p>Cena kreveta je $this->cena, a cena kreveta sa baldahinom iznosi $cena_sa_baldahinom</p>"; 
+        $cena=$this->get_price();
+        $cena_sa_baldahinom=$cena+$this->cena_Baldahina;
+        $string="<p>Cena kreveta je $cena, a cena kreveta sa baldahinom iznosi $cena_sa_baldahinom</p>"; 
+        echo $cena;
         return $string;    
     }
+    
     }
     $krevet1=new Baldahin(200,200,"hrastovina",500,50,50);
     echo $krevet1;
