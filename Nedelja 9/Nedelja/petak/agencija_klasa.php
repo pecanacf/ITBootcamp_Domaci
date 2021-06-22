@@ -5,11 +5,8 @@ class TuristickaAgencija{
 
     function __construct($baza){
         $this->conn = new mysqli('localhost', 'root', '', $baza);
-        // provera
         if ($this->conn->connect_error)
             die('Greska: '. $this->conn->connect_error);
-        // else
-        //     echo 'Konektovan!';
     }
 
     function izvrsi_select($upit){
@@ -30,13 +27,19 @@ class TuristickaAgencija{
         }else{
             die("Neuspesan upit: ".$r['poruka']);
         }
+        } 
+        function otkazi_rezervaciju($broj_pasosa){
+            $odg=$this->conn->query("DELETE FROM `spisak_putnika_po_putovanju` WHERE broj_pasosa=$broj_pasosa");
+        if($odg===false){
+            die("nije izvrsen upit: ".$this->conn->error);
+        }else{
+            echo "uspesno izvrsen upit";
         }
-            
+        }    
     }
+    $b=new TuristickaAgencija('turisticka_agencija');
 
-    function otkazi_rezervaciju($broj_pasosa){
-      echo "DELETE FROM `spisak_putnika_po_putovanju` WHERE broj_pasosa=";
-}
+  
 
 
 
