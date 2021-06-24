@@ -16,6 +16,8 @@ $destinacije=$b->prikazi_destinacije();
 print_r ($destinacije);
 echo "<br>";
 $b->otkazi_rezervaciju(23);
+echo "<br>";
+$destinacije->prikazi_putnike();
 
 ?>
 </body>

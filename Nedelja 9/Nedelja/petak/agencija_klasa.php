@@ -27,9 +27,21 @@ class TuristickaAgencija{
         }else{
             die("Neuspesan upit: ".$r['poruka']);
         }
-        } 
+        }
+    function prikazi_putnike(){
+        $r = $this->izvrsi_select("SELECT ime_i_prezime, drzava, grad,datum_polaska,datum_povratka 
+        FROM ((`spisak_putnika_po_putovanju` 
+        JOIN putnici ON spisak_putnika_po_putovanju.broj_pasosa=putnici.broj_pasosa) 
+        JOIN putovanja ON putovanja.id=spisak_putnika_po_putovanju.id_putovanja) 
+        JOIN destinacije ON putovanja.id_destinacija=destinacije.id");
+        if($r['uspesno'] == true){
+            return $r['niz'];
+        }else{
+                die("Neuspesan upit: ".$r['poruka']);
+        }
+        }  
         function otkazi_rezervaciju($broj_pasosa){
-            $odg=$this->conn->query("DELETE FROM `spisak_putnika_po_putovanju` WHERE broj_pasosa=$broj_pasosa");
+        $odg=$this->conn->query("DELETE FROM `spisak_putnika_po_putovanju` WHERE broj_pasosa=$broj_pasosa");
         if($odg===false){
             die("nije izvrsen upit: ".$this->conn->error);
         }else{
