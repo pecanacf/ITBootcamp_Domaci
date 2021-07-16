@@ -1,0 +1,790 @@
+<!-- Ćao, samo da zamolim da analizirate sajt na 67% zoom-a. 
+
+Iz nekog razloga mi je u Chrome-u od starta bilo tako podešeno i tek sam na kraju shvatio kako će izgledati na 100%.
+
+Ako ništa drugo barem, sam shvatio značaj korišćenja jedinica koje su relativne, a ne apsolutne vrednost :) -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <style>
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        h1,
+        li,
+        .numbering,
+        legend {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h2,
+        h3,
+        h4,
+        p,
+        span,
+        input,
+        form,
+        a {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            height: 5vh;
+            width: 1vw;
+            box-sizing: content-box;
+        }
+
+        #navigation {
+            position: fixed;
+            top: 0;
+            padding: 0px;
+            padding-top: 200px;
+            width: 4%;
+            height: 100vh;
+            text-align: center;
+            line-height: 100px;
+            color: #1D3557;
+            font-weight: bold;
+            border-right: solid 2px #1D3557;
+            background-color: #f1faee;
+        }
+
+        section.section {
+            margin: 60px;
+            margin-top: 0;
+            margin-right: 0;
+            width: 94.9vw;
+            height: 100vh;
+            padding: 20px;
+            padding-left: 150px;
+            padding-top: 20px;
+            padding-right: 5%;
+            line-height: 1;
+            box-sizing: border-box;
+            display: inline-block;
+        }
+
+        h1 {
+            font-size: 70px;
+            font-weight: bold;
+            color: #1D3557;
+        }
+
+        h2 {
+
+            font-size: 40px;
+            margin: 20px;
+            color: #495057;
+        }
+
+        .numbering {
+            float: right;
+            width: 10%;
+            font-size: 150px;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: #A8DADC;
+            color: #495057;
+        }
+
+        a,
+        a:hover,
+        a:focus,
+        a:active {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .slika {
+            border-radius: 50%;
+        }
+
+        .anchor {
+            display: none;
+        }
+
+        #intro {
+            background-color: #f1faee;
+            /* padding-right: 3%; */
+            text-align: center;
+            margin-bottom: 0;
+            margin-right: 0;
+
+        }
+
+        #work #h1_h2 h2,
+        h1 {
+            width: 50%;
+            text-align: center;
+            margin: 0 auto;
+            margin-left: 400px;
+            padding-left: 0;
+            margin-top: 30px;
+        }
+
+        #div_intro {
+            line-height: 1;
+            width: 90%;
+            margin-bottom: 0;
+            padding-top: 50px;
+        }
+
+        p#intro_text {
+            font-size: 60px;
+            text-align: center;
+            line-height: 200px;
+            color: #E63946;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+
+        #about {
+            background-color: white;
+            /* padding-right: 3%; */
+            text-align: center;
+            margin-bottom: 0;
+            margin-right: 0;
+            background: url("macke.jpg.png") repeat center/contain;
+        }
+
+        #div_about {
+            margin-top: -50px;
+            line-height: 1;
+            width: 90%;
+            margin-bottom: 0;
+            height: 200px;
+            padding-top: 0px;
+        }
+
+        img#bib {
+            height: 428px;
+            width: 428px;
+            float: left;
+            display: block;
+            margin-top: 30px;
+            margin-left: -40px;
+        }
+
+        .small_headline {
+            margin-top: 30px;
+            font-size: 40px;
+            color: #E63946;
+        }
+
+        #p_about {
+            font-size: 30px;
+            text-align: justify;
+            line-height: 1;
+            color: #457b9d;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+            padding-left: 50px;
+            width: 80%;
+            position: relative;
+            top: 40%;
+            transform: translate(+5%);
+            /* transform: translateY(-10%); */
+        }
+
+        #span_about1,
+        #span_about2 {
+            font-weight: 800;
+            color: #1D3557;
+        }
+
+        #h1_about {
+
+            color: #1D3557;
+            padding-top: 100px;
+            padding-left: 100px;
+        }
+
+        .numbering #02 {
+            padding-right: 0;
+        }
+
+        .navigation li:hover .meni {
+            display: none;
+        }
+
+        .navigation li:hover .anchor {
+            display: inline;
+        }
+
+        #work h1,
+        h2 {
+            text-align: center;
+        }
+
+        div.experience {
+            margin-top: 140px;
+            position: relative;
+            padding-right: 100px;
+            box-sizing: border-box;
+        }
+
+        div.experience h2 {
+            text-decoration: overline #1D3557;
+            color: #E63946;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        div.experience h3 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 30px;
+            color: #495057;
+        }
+
+        #tack {
+            float: left;
+            background: url("tacktmi.png") no-repeat center / contain;
+            background-position: top;
+            background-size: 70%;
+            width: 33.3%;
+            height: 350px;
+            position: relative;
+        }
+
+        #tack span {
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            width: 100%;
+
+        }
+
+        #tack span h2 {
+            text-decoration: overline #1D3557;
+
+        }
+
+        #achieve {
+            float: left;
+            background: url(achievers.png) no-repeat center / contain;
+            background-position: 50% 15%;
+            background-size: 70%;
+            width: 33.3%;
+            height: 350px;
+            position: relative;
+            border-left: solid 3px #457b9d;
+            box-sizing: border-box;
+
+
+        }
+
+        #achieve span {
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            width: 100%;
+
+            /* text-decoration: overline; */
+        }
+
+        #poliplan {
+            float: right;
+            background: url(poliplan.png) no-repeat center / contain;
+            background-position: 50% 15%;
+            background-size: 70%;
+            width: 33.33%;
+            height: 350px;
+            position: relative;
+            border-left: solid 3px #457b9d;
+            box-sizing: border-box;
+        }
+
+        #poliplan span {
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            width: 100%;
+            /* text-decoration: overline; */
+        }
+
+        .experience p {
+            clear: both;
+        }
+
+        p#cv {
+            height: 200px;
+            text-align: center;
+            padding-top: 110px;
+            font-size: 25px;
+
+        }
+
+        p#cv span {
+            border: solid 3px #1D3557;
+            color: #1D3557;
+            padding: 20px;
+            border-radius: 10px;
+            font-weight: 700
+        }
+
+        #projects h1,
+        h2 {
+            text-align: center;
+        }
+
+        #projects span h2 {
+            text-align: center;
+            margin-left: 90px;
+        }
+
+        #talentLMS a {
+            float: left;
+            display: block;
+        }
+
+        div#project_role {
+            float: right;
+            width: 45%;
+            float: left;
+            padding: 0;
+            padding-left: 80px;
+            padding-top: 100px;
+            height: 450px;
+
+        }
+
+        div#talentLMS {
+            height: 450px;
+            width: 45%;
+            float: left;
+            background: url("talentlms.PNG") no-repeat center/contain;
+            padding: 0;
+            padding-top: 100px;
+        }
+
+        #project_role h3,
+        h2,
+        p {
+            text-align: center;
+            color: #457b9d;
+        }
+
+        #project_role h3 {
+            font-size: 50px;
+        }
+
+        #project_role h2 {
+            font-size: 75px;
+            color: #1D3557;
+            margin: 0px auto;
+            margin-top: 50px;
+            width: 390px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+
+
+
+        }
+
+        #project_role p {
+            font-size: 30px;
+            color: #495057;
+        }
+
+        .section #website {
+            clear: both;
+            font-size: 50px;
+            height: 400px;
+            padding-top: 50px;
+            padding-left: 670px;
+            line-height: 100px;
+            text-align: left;
+        }
+
+        .section #website span {
+            background-color: #64dfdf;
+            border-radius: 10px;
+            padding: 10px;
+            color: #1D3557;
+            font-weight: 600;
+        }
+
+        #contact {
+            background-color: #1D3557;
+            margin-bottom: 0;
+        }
+
+        #contact .numbering {
+            color: #E63946;
+        }
+
+        #contact h1,
+        h2 {
+            text-align: center;
+            color: #E63946;
+        }
+
+        #contact h2 {
+            color: #f1faee;
+        }
+
+        #contact #contact_form {
+            float: left;
+            margin-top: 50px;
+            width: 40%;
+        }
+
+        #contact input,
+        textarea {
+            width: 100%;
+        }
+
+        #contact legend {
+            font-size: 60px;
+            color: #f1faee;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        form input,
+        textarea,
+        ::placeholder {
+            padding: 10px;
+            color: #457b9d;
+            background-color: transparent;
+            border: none;
+            border-bottom: solid 2px #457b9d;
+            font-size: 1.2em;
+            font-family: 'Open Sans', sans-serif;
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+
+        #message {
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0;
+            padding-right: 0;
+            width: 103%;
+            height: 200px;
+            padding-top: 0;
+        }
+
+        input[type=submit]#submit {
+            width: 50%;
+            margin-top: 25px;
+            border: solid 2px #E63946;
+            color: #E63946;
+            font-size: 2em;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        #contact_info {
+            float: right;
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 50px;
+            width: 40%;
+        }
+
+        div#contact_info p .contact_white {
+            color: #f1faee;
+            font-size: 1.2em;
+            line-height: 3;
+            margin-left: 30px;
+        }
+
+
+
+
+
+
+
+
+        /* slika 428x428px
+        */
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="navigation" id="navigation">
+            <li><a href="#intro"><span class="meni">01</span><span class="anchor">Intro</span></a></li>
+            <li><a href="#about"><span class="meni">02</span><span class="anchor">About</span></a></li>
+            <li><a href="#work"><span class="meni">03</span><span class="anchor">Work</span></a></li>
+            <li><a href="#projects"><span class="meni">04</span><span class="anchor">Project</span></a></li>
+            <li><a href="#contact"><span class="meni">05</span><span class="anchor">Contact</span></a></li>
+        </ul>
+    </nav>
+    <section class="section" id="intro">
+        <span class="numbering">01</span>
+        <div id="div_intro">
+            <!-- <h2>Hi, I am</h2> -->
+            <h1>FILIP PECANAC</h1>
+            <h2>HR Consultant/Web Developer (Soon to be)</h2><br><br>
+            <img src="happy man.jpg" alt="Filip" class="slika" id="filip">
+            <p id="intro_text">LET'S CREATE GREAT THINGS TOGETHER!</p>
+            <span class="anchor">Intro</span>
+        </div>
+    </section>
+    <section class="section" id="about">
+        <span class="numbering" id="02">02</span>
+        <div id="div_about">
+
+            <h1 id="h1_about">HELLO, <br> <span class="small_headline"> Here is a bit about me:</span></h1>
+            <img src="bebanboban.jpg" alt="Beban i Boban" class="slika" id="bib">
+            <br><br><br><br><br>
+            <p id="p_about">I'm Filip and I am one of the privileged <span id="span_about1">IT
+                    Bootcamp
+                    members</span>! <br><br> For the past year
+                I've
+                had a desire to
+                become a
+                part of the IT community and now my dream is becoming reality :) <br><br>Besides programming I am a huge
+                fan
+                of
+                sports, especially football. I used to train it when I was younger, but now i usually play it only via
+                Playstation video games. <br><br> As you can see from the image on the left, I am also a proud owner of
+                two
+                cats -
+                brothers<span id="span_about2" ">
+                    Beban
+                    and Boban</span> who have been a part of my family for the last year.</p>
+        </div>
+
+
+
+    </section>
+    <section class=" section" id="work">
+                    <span class="numbering">03</span>
+                    <span class="anchor">Work</span>
+                    <div id="h1_h2">
+                        <h2>Check my</h2>
+                        <h1>WORK XP</h1>
+                    </div>
+                    <div class="experience">
+                        <div class="employers" id="tack">
+                            <!-- <img src="tacktmi.png" alt="TackTMI"> -->
+                            <span>
+                                <h2>TackTMI Adria</h2>
+                                <h3>HR Consultant&Trainer</h3>
+                            </span>
+                        </div>
+                        <div class="employers" id="achieve">
+                            <!-- <img src="achievers.png" alt="Achievers Dream"> -->
+                            <span>
+                                <h2>Achievers Dream</h2>
+                                <h3>LMS Adminstrator</h3>
+                            </span>
+                        </div>
+                        <div class="employers" id="poliplan">
+                            <!-- <img src="poliplan.png" alt="Poliplan 1to1"> -->
+                            <span>
+                                <h2>Poliplan 1to1</h2>
+                                <h3>BTL Supervisor</h3>
+                            </span>
+                        </div>
+                        <p id="cv"><span><a href="Pecanac Filip CV.pdf" download>Download full CV</a></span></p>
+                    </div>
+    </section>
+    <section class="section" id="projects">
+        <span class="numbering">04</span>
+        <span class="anchor">Projects</span>
+        <span>
+            <h2>My Future</h2>
+        </span>
+        <h1>PROJECT</h1>
+
+        <div id=talentLMS>
+        </div>
+        <div id="project_role">
+            <h3>Design/Backend development</h3>
+            <h2>TalentLMS</h2>
+            <br><br><br>
+            <p>A user friendly LMS platform. Enables users to create courses, enroll learners and generate different
+                reports
+                on their activity.</p>
+
+
+        </div>
+        <p id="website">
+            <span><a href="https://www.talentlms.com/">Visit Website</a></span>
+        </p>
+
+
+
+    </section>
+    <section class="section" id="contact">
+        <span class="numbering">05</span>
+        <span class="anchor">Contact</span>
+        <h2>Get in</h2>
+        <h1>TOUCH</h1>
+        <div id="contact_form">
+            <form>
+                <legend>Send me Email</legend>
+                <input type="text" placeholder="Enter your name*" required> <br>
+                <input type="email" placeholder="Enter your email*" required> <br>
+                <input type="number" placeholder="Enter your phone*" required> <br>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder=" Leave a message for me*"
+                    required></textarea>
+                <br>
+
+                <input type="submit" id="submit" value="Send message">
+            </form>
+        </div>
+        <div id="contact_info">
+            <legend>Contact Info</legend>
+            <p><span class="contact_white">Phone: </span><br>
+                +381 631045673 <br>
+                <span class="contact_white">Email:</span> <br>
+                pecanacf@gmail.com <br>
+                <span class="contact_white">Address:</span><br>
+                Dunavski kej 53,
+                Dorcol, Belgrade
+            </p>
+        </div>
+    </section>
+</body>
+
+</html>
